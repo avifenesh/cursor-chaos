@@ -1113,7 +1113,8 @@ chaoticCursor.addEventListener("click", (e) => {
   if (isCurrentCursorBad) {
     // Clicked a bad emoji - lose points!
     particleExplosion(clickX, clickY);
-    updateScore(-15); // Lose 15 points for clicking bad emoji
+    const penalty = Math.floor(random(10, 21)); // Random penalty 10-20 points
+    updateScore(-penalty); // Lose random points for clicking bad emoji
 
     // Special message for bad emoji
     messageEl.innerText = "DANGER! You clicked a bad one! 💀";
@@ -1143,8 +1144,11 @@ catEl.addEventListener("click", (e) => {
   e.stopPropagation();
   if (!catVisible) return;
 
-  // Random score change: -50 to +50 points
-  const delta = Math.floor(random(-50, 51));
+  // Random gambling: either bonus (+40 to +50) or penalty (-10 to -20)
+  const isBonus = Math.random() > 0.5; // 50/50 chance
+  const delta = isBonus
+    ? Math.floor(random(40, 51)) // Bonus: +40 to +50 points
+    : -Math.floor(random(10, 21)); // Penalty: -10 to -20 points
   updateScore(delta);
 
   // Special message for cat gambling
