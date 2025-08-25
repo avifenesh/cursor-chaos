@@ -14,7 +14,7 @@ An interactive web-based cursor chasing game featuring the magical Cheshire Cat 
 
 ## 🚀 Play Now
 
-**[🎮 Play Cursor Chaos](https://avifen.github.io/cursor-chaos/)**
+**[🎮 Play Cursor Chaos](https://avifenesh.github.io/cursor-chaos/)**
 
 ## 🎨 Features
 
