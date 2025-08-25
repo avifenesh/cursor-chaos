@@ -3,15 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cursor Chaos</title>
+  <title>Cursor Chaos - Interactive Game</title>
+  <meta name="description" content="A fun interactive cursor chasing game featuring the magical Cheshire Cat">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fredoka+One:wght@400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game-container">
-    <div id="score">Score: 0</div>
-    <div id="message"></div>
-    <div id="alice-cat">
-      <svg width="80" height="80" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <div id="game-container" role="main" aria-label="Game area">
+    <!-- Game UI Header -->
+    <header class="game-header">
+      <div id="score" aria-live="polite" aria-label="Current score">Score: 0</div>
+      <div class="game-title">
+        <h1>Cursor Chaos</h1>
+        <p class="subtitle">Catch the magical cursor!</p>
+      </div>
+    </header>
+  
+    <!-- Game Messages -->
+    <div id="message" aria-live="assertive" aria-label="Game feedback"></div>
+    <!-- Cheshire Cat Character -->
+    <div id="alice-cat" role="button" tabindex="0" aria-label="Click the Cheshire Cat for bonus points!"
+      class="game-element magical-character">
+      <svg width="80" height="80" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <!-- Cheshire Cat - Accurate to Disney reference images -->
         <defs>
           <!-- Purple/lavender body color like Disney version -->
@@ -122,15 +139,6 @@
         <path d="M 95 76 L 112 79" stroke="#000" stroke-width="1.5" />
     
         <!-- Magical sparkles around the cat -->
-        <circle cx="20" cy="30" r="1.5" fill="#fff" opacity="0.8">
-          <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="100" cy="25" r="1" fill="#FFD700" opacity="0.9">
-          <animate attributeName="opacity" values="0.9;0.4;0.9" dur="1.5s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="15" cy="90" r="1.2" fill="#9932CC" opacity="0.7">
-          <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite" />
-        </circle>
         <circle cx="105" cy="85" r="0.8" fill="#40E0D0" opacity="0.8">
           <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.8s" repeatCount="indefinite" />
         </circle>
@@ -169,14 +177,7 @@
     <path d="M 45 52 Q 48 48 52 50" stroke="#882266" stroke-width="1.5" fill="none" />
     <path d="M 68 50 Q 72 48 75 52" stroke="#882266" stroke-width="1.5" fill="none" />
     
-    <!-- Magical effects (sparkles) -->
-    <g opacity="0.8">
-      <text x="25" y="35" font-family="Arial" font-size="8" fill="#ffdd99">✨</text>
-      <text x="90" y="30" font-family="Arial" font-size="6" fill="#ff99ff">⭐</text>
-      <text x="100" y="75" font-family="Arial" font-size="7" fill="#99ffff">💫</text>
-      <text x="20" y="90" font-family="Arial" font-size="6" fill="#ffff99">🌟</text>
-      <text x="15" y="50" font-family="Arial" font-size="5" fill="#ff99dd">✨</text>
-    </g>
+
     </svg>
     </div>
   </div>

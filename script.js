@@ -48,7 +48,7 @@ function random(min, max) {
 }
 
 /**
- * Update score and show appropriate feedback
+ * Update score and show appropriate feedback with modern UI enhancements
  * @param {number} delta - Score change
  */
 function updateScore(delta) {
@@ -58,6 +58,9 @@ function updateScore(delta) {
 
   // Clear previous message timeout
   clearTimeout(updateScore.messageTimeout);
+
+  // Remove existing message classes
+  messageEl.classList.remove("show", "success", "error", "milestone");
 
   // Check for score milestones and add special celebrations
   const scoreMilestone = Math.floor(score / 50) > Math.floor(oldScore / 50);
@@ -81,9 +84,16 @@ function updateScore(delta) {
       "Magnificent! 👑",
       "Outstanding! 🏆",
     ][Math.floor(Math.random() * 15)];
-    messageEl.style.color = "#4CAF50";
-    messageEl.style.fontWeight = "bold";
-    messageEl.style.textShadow = "0 0 10px rgba(76, 175, 80, 0.5)";
+
+    messageEl.classList.add("show", "success");
+
+    if (bigMilestone) {
+      messageEl.innerText = `🏆 ${score} POINTS MILESTONE! 🏆`;
+      messageEl.classList.add("milestone");
+    } else if (scoreMilestone) {
+      messageEl.innerText = `✨ ${score} Points! ✨`;
+      messageEl.classList.add("milestone");
+    }
 
     // Multiple happy effects - randomly choose combination
     const effectRand = Math.random();
@@ -170,15 +180,15 @@ function updateScore(delta) {
     };
   } else {
     messageEl.innerText = [
-      "Ouch! 🤡",
-      "Try again 😹",
-      "Haha 😈",
-      "Miss! 💥",
-      "Oops! 😵",
-    ][Math.floor(Math.random() * 5)];
-    messageEl.style.color = "#f44336";
-    messageEl.style.fontWeight = "bold";
-    messageEl.style.textShadow = "0 0 10px rgba(244, 67, 54, 0.5)";
+      "Oops! 😅",
+      "Try again! 🎯",
+      "Almost! 😉",
+      "So close! 😌",
+      "Keep going! 💪",
+      "Nice try! 😊",
+      "Don't give up! ✨",
+    ][Math.floor(Math.random() * 7)];
+    messageEl.classList.add("show", "error");
 
     // Enhanced negative effects - more noticeable mocking
     screenShake();
@@ -222,12 +232,12 @@ function updateScore(delta) {
     };
   }
 
-  // Clear message after 2 seconds
+  // Auto-hide message after delay
   updateScore.messageTimeout = setTimeout(() => {
+    messageEl.classList.remove("show");
     messageEl.innerText = "Click the chaotic cursor! 🎯";
-    messageEl.style.color = "#444";
-    messageEl.style.textShadow = "none";
-  }, 2000);
+    messageEl.classList.add("show");
+  }, 3000);
 
   // Special milestone celebrations
   if (delta > 0) {
@@ -1162,6 +1172,7 @@ function initGame() {
 
   // Set initial message
   messageEl.innerText = "Click the chaotic cursor! 🎯";
+  messageEl.classList.add("show");
 
   // Start main game loop - cursor teleports every 2-5 seconds (reduced frequency)
   setInterval(() => {
