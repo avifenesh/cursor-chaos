@@ -10,6 +10,7 @@ body, html {
   overflow: hidden;
   background: linear-gradient(135deg, #ffe29f, #ffa99f);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.5s ease;
 }
 
 #game-container {
@@ -89,4 +90,31 @@ body, html {
   0%, 100% { transform: translateX(0); }
   25% { transform: translateX(-5px); }
   75% { transform: translateX(5px); }
+}
+@keyframes rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    transform: scale(1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(255, 105, 180, 1), 0 0 40px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+.confetti {
+  animation: rainbow 2s linear infinite;
 }
