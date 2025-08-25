@@ -1113,7 +1113,7 @@ chaoticCursor.addEventListener("click", (e) => {
   if (isCurrentCursorBad) {
     // Clicked a bad emoji - lose points!
     particleExplosion(clickX, clickY);
-    const penalty = Math.floor(random(10, 21)); // Random penalty 10-20 points
+    const penalty = Math.floor(random(5, 16)); // Random penalty 5-15 points
     updateScore(-penalty); // Lose random points for clicking bad emoji
 
     // Special message for bad emoji

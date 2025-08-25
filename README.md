@@ -35,7 +35,7 @@ An interactive web-based cursor chasing game featuring the magical Cheshire Cat 
 
 - **Good Targets**: Cursor (+10 points)
 - **Gamble Target**: Cheshire Cat (50/50 chance: +40 to +50 OR -10 to -20 points)
-- **Bad Targets**: Dangerous emojis (-10 to -20 points)
+- **Bad Targets**: Dangerous emojis (-5 to -15 points)
 - **Timing Effects**: Screen shake, vibration, and dizzy effects
 - **Milestone Rewards**: Special celebrations and visual effects
 
@@ -43,7 +43,7 @@ An interactive web-based cursor chasing game featuring the magical Cheshire Cat 
 
 - Cursor Hit: **+10 points**
 - Cheshire Cat Gamble: **50/50 chance** - either **+40 to +50 points** OR **-10 to -20 points**
-- Bad Emoji Hit: **-10 to -20 points** (random)
+- Bad Emoji Hit: **-5 to -15 points** (random)
 - **50 Points**: Star Burst + Heart Explosion
 - **100 Points**: Ultimate Celebration with Fireworks!
 
