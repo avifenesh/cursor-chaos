@@ -10,7 +10,175 @@
   <div id="game-container">
     <div id="score">Score: 0</div>
     <div id="message"></div>
-    <div id="alice-cat">😸</div>
+    <div id="alice-cat">
+      <svg width="80" height="80" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cheshire Cat - Accurate to Disney reference images -->
+        <defs>
+          <!-- Purple/lavender body color like Disney version -->
+          <radialGradient id="catBodyGradient" cx="0.5" cy="0.4" r="0.8">
+            <stop offset="0%" style="stop-color:#DA70D6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#BA55D3;stop-opacity:0.9" />
+            <stop offset="100%" style="stop-color:#9932CC;stop-opacity:0.8" />
+          </radialGradient>
+          <!-- Darker purple stripes -->
+          <linearGradient id="stripeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#8B008B;stop-opacity:0.9" />
+            <stop offset="50%" style="stop-color:#4B0082;stop-opacity:0.8" />
+            <stop offset="100%" style="stop-color:#2E0054;stop-opacity:0.7" />
+          </linearGradient>
+          <!-- Yellow eyes -->
+          <radialGradient id="eyeGradient" cx="0.3" cy="0.3" r="0.8">
+            <stop offset="0%" style="stop-color:#FFFF99;stop-opacity:1" />
+            <stop offset="60%" style="stop-color:#FFD700;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+          </radialGradient>
+          <filter id="magicalGlow">
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+    
+        <!-- Floating cat head (no body, just like references) -->
+        <!-- Main Cat Head - teal/turquoise like Disney -->
+        <ellipse cx="60" cy="60" rx="35" ry="30" fill="url(#catBodyGradient)" filter="url(#magicalGlow)" />
+    
+        <!-- Distinctive purple stripes across the head -->
+        <path d="M 30 45 Q 60 40 90 45" stroke="url(#stripeGradient)" stroke-width="4" fill="none" opacity="0.8" />
+        <path d="M 32 55 Q 60 50 88 55" stroke="url(#stripeGradient)" stroke-width="4" fill="none" opacity="0.8" />
+        <path d="M 35 65 Q 60 60 85 65" stroke="url(#stripeGradient)" stroke-width="4" fill="none" opacity="0.8" />
+        <path d="M 38 75 Q 60 70 82 75" stroke="url(#stripeGradient)" stroke-width="4" fill="none" opacity="0.8" />
+    
+        <!-- Cat Ears - triangular and purple -->
+        <polygon points="35,35 25,15 50,25" fill="url(#catBodyGradient)" stroke="#4B0082" stroke-width="1.5" />
+        <polygon points="85,35 95,15 70,25" fill="url(#catBodyGradient)" stroke="#4B0082" stroke-width="1.5" />
+    
+        <!-- Purple stripes on ears -->
+        <path d="M 30 30 L 45 22" stroke="url(#stripeGradient)" stroke-width="2" opacity="0.7" />
+        <path d="M 90 30 L 75 22" stroke="url(#stripeGradient)" stroke-width="2" opacity="0.7" />
+    
+        <!-- Inner ears - pink -->
+        <polygon points="37,32 30,20 45,26" fill="#FFB6C1" />
+        <polygon points="83,32 90,20 75,26" fill="#FFB6C1" />
+    
+        <!-- Large bright yellow eyes like Disney version -->
+        <ellipse cx="47" cy="55" rx="9" ry="11" fill="url(#eyeGradient)" stroke="#B8860B" stroke-width="1.5" />
+        <ellipse cx="73" cy="55" rx="9" ry="11" fill="url(#eyeGradient)" stroke="#B8860B" stroke-width="1.5" />
+    
+        <!-- Large black pupils -->
+        <ellipse cx="47" cy="57" rx="2" ry="7" fill="#000" />
+        <ellipse cx="73" cy="57" rx="2" ry="7" fill="#000" />
+    
+        <!-- Eye highlights -->
+        <ellipse cx="48" cy="53" rx="1.5" ry="2.5" fill="#fff" opacity="0.9" />
+        <ellipse cx="74" cy="53" rx="1.5" ry="2.5" fill="#fff" opacity="0.9" />
+    
+        <!-- Small pink nose -->
+        <polygon points="60,62 58,66 62,66" fill="#FFB6C1" stroke="#FF69B4" stroke-width="0.5" />
+    
+        <!-- THE ICONIC CHESHIRE GRIN - enormous and wide like Disney -->
+        <!-- Mouth outline - extremely wide grin -->
+        <path d="M 28 72 Q 60 90 92 72" stroke="#000" stroke-width="2.5" fill="none" />
+    
+        <!-- Mouth interior - dark pink/red -->
+        <path d="M 30 73 Q 60 88 90 73 Q 60 82 30 73" fill="#8B0000" />
+    
+        <!-- Teeth - lots of white triangular teeth like reference -->
+        <polygon points="32,73 34,79 36,73" fill="#fff" />
+        <polygon points="37,73 39,80 41,73" fill="#fff" />
+        <polygon points="42,73 44,81 46,73" fill="#fff" />
+        <polygon points="47,73 49,82 51,73" fill="#fff" />
+        <polygon points="52,73 54,82 56,73" fill="#fff" />
+        <polygon points="57,73 59,82 61,73" fill="#fff" />
+        <polygon points="62,73 64,82 66,73" fill="#fff" />
+        <polygon points="67,73 69,82 71,73" fill="#fff" />
+        <polygon points="72,73 74,81 76,73" fill="#fff" />
+        <polygon points="77,73 79,80 81,73" fill="#fff" />
+        <polygon points="82,73 84,79 86,73" fill="#fff" />
+        <polygon points="87,73 89,78 91,73" fill="#fff" />
+    
+        <!-- Bottom teeth -->
+        <polygon points="35,81 37,77 39,81" fill="#fff" />
+        <polygon points="41,82 43,78 45,82" fill="#fff" />
+        <polygon points="47,83 49,78 51,83" fill="#fff" />
+        <polygon points="53,83 55,78 57,83" fill="#fff" />
+        <polygon points="59,83 61,78 63,83" fill="#fff" />
+        <polygon points="65,83 67,78 69,83" fill="#fff" />
+        <polygon points="71,82 73,78 75,82" fill="#fff" />
+        <polygon points="77,81 79,78 81,81" fill="#fff" />
+        <polygon points="83,80 85,78 87,80" fill="#fff" />
+    
+        <!-- Tongue - pink, showing slightly -->
+        <ellipse cx="60" cy="80" rx="8" ry="3" fill="#FF69B4" opacity="0.8" />
+    
+        <!-- Long whiskers - black and prominent -->
+        <path d="M 25 68 L 8 65" stroke="#000" stroke-width="1.5" />
+        <path d="M 25 72 L 5 72" stroke="#000" stroke-width="1.5" />
+        <path d="M 25 76 L 8 79" stroke="#000" stroke-width="1.5" />
+        <path d="M 95 68 L 112 65" stroke="#000" stroke-width="1.5" />
+        <path d="M 95 72 L 115 72" stroke="#000" stroke-width="1.5" />
+        <path d="M 95 76 L 112 79" stroke="#000" stroke-width="1.5" />
+    
+        <!-- Magical sparkles around the cat -->
+        <circle cx="20" cy="30" r="1.5" fill="#fff" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="100" cy="25" r="1" fill="#FFD700" opacity="0.9">
+          <animate attributeName="opacity" values="0.9;0.4;0.9" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="15" cy="90" r="1.2" fill="#9932CC" opacity="0.7">
+          <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="105" cy="85" r="0.8" fill="#40E0D0" opacity="0.8">
+          <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.8s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </div>
+    <polygon points="60,70 57,75 63,75" fill="#ff6699" stroke="#cc3366" stroke-width="1" />
+    
+    <!-- The Famous Cheshire Grin (much wider and more prominent) -->
+    <path d="M 35 78 Q 60 92 85 78" stroke="#222" stroke-width="4" fill="none" stroke-linecap="round" />
+    
+    <!-- Mouth interior (pink) -->
+    <path d="M 38 80 Q 60 90 82 80 Q 70 85 60 85 Q 50 85 38 80" fill="#ff99bb" stroke="#dd6688" stroke-width="1" />
+    
+    <!-- Many white teeth (characteristic grin) -->
+    <rect x="45" y="79" width="2" height="6" fill="#fff" rx="1" />
+    <rect x="48" y="78" width="2" height="7" fill="#fff" rx="1" />
+    <rect x="51" y="79" width="2" height="6" fill="#fff" rx="1" />
+    <rect x="54" y="78" width="2" height="7" fill="#fff" rx="1" />
+    <rect x="57" y="79" width="2" height="6" fill="#fff" rx="1" />
+    <rect x="60" y="78" width="2" height="7" fill="#fff" rx="1" />
+    <rect x="63" y="79" width="2" height="6" fill="#fff" rx="1" />
+    <rect x="66" y="78" width="2" height="7" fill="#fff" rx="1" />
+    <rect x="69" y="79" width="2" height="6" fill="#fff" rx="1" />
+    <rect x="72" y="78" width="2" height="7" fill="#fff" rx="1" />
+    <rect x="75" y="79" width="2" height="6" fill="#fff" rx="1" />
+    
+    <!-- Long whiskers (more prominent) -->
+    <line x1="15" y1="62" x2="35" y2="65" stroke="#333" stroke-width="2" stroke-linecap="round" />
+    <line x1="15" y1="68" x2="35" y2="68" stroke="#333" stroke-width="2" stroke-linecap="round" />
+    <line x1="15" y1="74" x2="35" y2="71" stroke="#333" stroke-width="2" stroke-linecap="round" />
+    <line x1="85" y1="65" x2="105" y2="62" stroke="#333" stroke-width="2" stroke-linecap="round" />
+    <line x1="85" y1="68" x2="105" y2="68" stroke="#333" stroke-width="2" stroke-linecap="round" />
+    <line x1="85" y1="71" x2="105" y2="74" stroke="#333" stroke-width="2" stroke-linecap="round" />
+    
+    <!-- Eyebrows/forehead markings -->
+    <path d="M 45 52 Q 48 48 52 50" stroke="#882266" stroke-width="1.5" fill="none" />
+    <path d="M 68 50 Q 72 48 75 52" stroke="#882266" stroke-width="1.5" fill="none" />
+    
+    <!-- Magical effects (sparkles) -->
+    <g opacity="0.8">
+      <text x="25" y="35" font-family="Arial" font-size="8" fill="#ffdd99">✨</text>
+      <text x="90" y="30" font-family="Arial" font-size="6" fill="#ff99ff">⭐</text>
+      <text x="100" y="75" font-family="Arial" font-size="7" fill="#99ffff">💫</text>
+      <text x="20" y="90" font-family="Arial" font-size="6" fill="#ffff99">🌟</text>
+      <text x="15" y="50" font-family="Arial" font-size="5" fill="#ff99dd">✨</text>
+    </g>
+    </svg>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
